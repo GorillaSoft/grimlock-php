@@ -4,7 +4,7 @@ namespace Grimlock\Test;
 
 use PHPUnit\Framework\TestCase;
 
-class MailerTest extends TestCase
+class GrimlockMailerTest extends TestCase
 {
 
 }

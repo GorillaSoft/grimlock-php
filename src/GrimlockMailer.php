@@ -7,7 +7,7 @@ use Grimlock\Mail\MailPerson;
 use Grimlock\Util\GrimlockList;
 use PHPMailer\PHPMailer\PHPMailer;
 
-class Mailer
+class GrimlockMailer
 {
 
     private $mail;
@@ -37,14 +37,14 @@ class Mailer
         if (is_readable($config)) {
             include $config;
             if (empty($grimlock_mail_host)) {
-                throw new GrimlockException(Mailer::class, 'Grimlock Mail Host is not set.');
+                throw new GrimlockException(GrimlockMailer::class, 'Grimlock Mail Host is not set.');
             } else if (empty($grimlock_mail_email)) {
-                throw new GrimlockException(Mailer::class, 'Grimlock Mail Email is not set.');
+                throw new GrimlockException(GrimlockMailer::class, 'Grimlock Mail Email is not set.');
             } else if (empty($grimlock_mail_password)) {
-                throw new GrimlockException(Mailer::class, 'Grimlock Mail Password is not set.');
+                throw new GrimlockException(GrimlockMailer::class, 'Grimlock Mail Password is not set.');
             }
         } else {
-            throw new GrimlockException(Mailer::class, 'Config file not exist.');
+            throw new GrimlockException(GrimlockMailer::class, 'Config file not exist.');
         }
         
     }

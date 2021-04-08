@@ -20,14 +20,13 @@ Follow us on [![Twitter](http://twitter-badges.s3.amazonaws.com/twitter-a.png)](
 ## Features
 
  * Generation of PDF from HTML easily using Mapper DomPDF
- * Upload Image in Base64 easily
  * Handle your own custom exceptions
  * Supports for manipulating a list of objects
 
  
 ## Requirements
 
- * PHP version 7.2 or higher
+ * PHP version 7.4 or higher
 
 ## Recommendations
 
@@ -54,23 +53,23 @@ require 'vendor/autoload.php';
 
 ## Quick Start
 
-#### HtmlToPdf
+#### GrimlockPdf
 
 ```php
-use Grimlock\HtmlToPdf;
+use Grimlock\GrimlockPdf;
 use Grimlock\Enum\EnumPdfOrientation;
 use Grimlock\Enum\EnumPdfSize;
 use Grimlock\Exception\GrimlockException;
 
-// Instantiate Grimlock HtmlToPdf
-$htmlToPdf = new HtmlToPdf();
+// Instantiate Grimlock GrimlockPdf
+$grimlockPdf = new GrimlockPdf();
 try {
     // Load file template HTML
-    $htmlToPdf->loadHTML('template.html.php', EnumPdfSize::A4, EnumPdfOrientation::HORIZONTAL);
+    $grimlockPdf->loadHTML('template.html.php', EnumPdfSize::A4, EnumPdfOrientation::HORIZONTAL);
     // Generate PDF
-    $htmlToPdf->generatePDF('example.pdf');
+    $grimlockPdf->generatePDF('example.pdf');
 } catch(GrimlockException $e) {
-    $e->getMessage();
+    echo $e->getMessage();
 }
 ```
 
@@ -83,7 +82,7 @@ use Grimlock\Util\GrimlockList;
 $lArray = new GrimlockList();
 
 // Append object in the GrimlockList
-$object1 = new Object();
+$object1 = new Objet();
 $lArray->append($object1);
 
 // Obtain object of the GrimlockList

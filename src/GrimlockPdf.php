@@ -10,12 +10,12 @@ use Grimlock\Exception\GrimlockException;
 use Exception;
 
 /**
- * Class HtmlToPdf
+ * Class GrimlockPdf
  * Class that facilitates the use of the DOMPDF library to load HTML and render it as PDF.
  * @package Grimlock
  * @author Rubén Darío Huamaní Ucharima
  */
-class HtmlToPdf
+class GrimlockPdf
 {
 
     /**
@@ -24,7 +24,7 @@ class HtmlToPdf
     private $pdf;
 
     /**
-     * HtmlToPdf constructor.
+     * GrimlockPdf constructor.
      */
     public function __construct()
     {
@@ -42,11 +42,11 @@ class HtmlToPdf
     {
         if (is_readable($pathHTML)) {
             if (!Enumeration::contains(EnumPdfSize::class, $size)) {
-                throw new GrimlockException(HtmlToPdf::class, 'Size PDF not exist');
+                throw new GrimlockException(GrimlockPdf::class, 'Size PDF not exist');
             }
 
             if (!Enumeration::contains(EnumPdfOrientation::class, $orientation)) {
-                throw new GrimlockException(HtmlToPdf::class, 'Orientation PDF not exist');
+                throw new GrimlockException(GrimlockPdf::class, 'Orientation PDF not exist');
             }
 
             ob_start();
@@ -58,7 +58,7 @@ class HtmlToPdf
             $this->pdf->setPaper($size, $orientation);
             $this->pdf->render();
         } else {
-            throw new GrimlockException(HtmlToPdf::class, 'Template HTML not exist.');
+            throw new GrimlockException(GrimlockPdf::class, 'Template HTML not exist.');
         }
     }
 
@@ -74,10 +74,10 @@ class HtmlToPdf
                 $options = array('MailAttachment' => 0);
                 $this->pdf->stream($nomPDF, $options);
             } else {
-                throw new GrimlockException(HtmlToPdf::class, 'Name PDF cannot be null or empty');
+                throw new GrimlockException(GrimlockPdf::class, 'Name PDF cannot be null or empty');
             }
         } catch(Exception $e) {
-            throw new GrimlockException(HtmlToPdf::class, $e->getMessage());
+            throw new GrimlockException(GrimlockPdf::class, $e->getMessage());
         }
     }
 
@@ -93,10 +93,10 @@ class HtmlToPdf
                 $options = array('MailAttachment' => 1);
                 $this->pdf->stream($nomPDF, $options);
             } else {
-                throw new GrimlockException(HtmlToPdf::class, 'Name PDF cannot be null or empty');
+                throw new GrimlockException(GrimlockPdf::class, 'Name PDF cannot be null or empty');
             }
         } catch(Exception $e) {
-            throw new GrimlockException(HtmlToPdf::class, $e->getMessage());
+            throw new GrimlockException(GrimlockPdf::class, $e->getMessage());
         }
     }
 

@@ -1,5 +1,5 @@
 <?php
-## Mailer Configuration
+## GrimlockMailer Configuration
 $grimlock_mail_host = 'smtp.gmail.com';
 $grimlock_mail_email = 'demo@gmail.com';
 $grimlock_mail_password = 'demo';

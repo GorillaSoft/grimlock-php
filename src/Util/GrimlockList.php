@@ -15,7 +15,7 @@ use Grimlock\Exception\GrimlockException;
 class GrimlockList extends ArrayObject implements JsonSerializable
 {
 
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         return $this->getArrayCopy();
     }
@@ -33,7 +33,7 @@ class GrimlockList extends ArrayObject implements JsonSerializable
         }
     }
 
-    public function getSize()
+    public function getSize(): int
     {
         return $this->count();
     }
