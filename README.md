@@ -77,16 +77,16 @@ try {
 #### ArrayList
 
 ```php
-use Grimlock\Util\ArrayList;
+use Grimlock\Util\GrimlockList;
 
-// Instantiate and use the ArrayList
-$lArray = new ArrayList();
+// Instantiate and use the GrimlockList
+$lArray = new GrimlockList();
 
-// Append object in the ArrayList
+// Append object in the GrimlockList
 $object1 = new Object();
 $lArray->append($object1);
 
-// Obtain object of the ArrayList
+// Obtain object of the GrimlockList
 $object = $lArray->getItem(0);
 
 ```

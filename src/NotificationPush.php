@@ -6,7 +6,7 @@ use Grimlock\Enum\EnumNotificationProvider;
 use Grimlock\Exception\GrimlockException;
 use Grimlock\Notification\NotificationMessage;
 use Grimlock\Notification\NotificationUser;
-use Grimlock\Util\ArrayList;
+use Grimlock\Util\GrimlockList;
 
 class NotificationPush
 {
@@ -46,7 +46,7 @@ class NotificationPush
         }
     }
 
-    public function send(NotificationMessage $notificationMessage, NotificationUser $user = null, ArrayList $users = null)
+    public function send(NotificationMessage $notificationMessage, NotificationUser $user = null, GrimlockList $users = null)
     {
         if ($user == null and $users == null)
         {

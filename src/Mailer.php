@@ -4,7 +4,7 @@ namespace Grimlock;
 
 use Grimlock\Exception\GrimlockException;
 use Grimlock\Mail\MailPerson;
-use Grimlock\Util\ArrayList;
+use Grimlock\Util\GrimlockList;
 use PHPMailer\PHPMailer\PHPMailer;
 
 class Mailer
@@ -49,7 +49,7 @@ class Mailer
         
     }
 
-    public function generateMail(MailPerson $address, $subject, $body, ArrayList $lAddressCc = null, ArrayList $lAddressBcc = null, ArrayList $lAttachments = null){
+    public function generateMail(MailPerson $address, $subject, $body, GrimlockList $lAddressCc = null, GrimlockList $lAddressBcc = null, GrimlockList $lAttachments = null){
         $this->mail->From = $this->senderMail;
         $this->mail->FromName = $this->senderName;
         $this->mail->AddAddress($address->getMail(), $address->getName());
@@ -79,7 +79,7 @@ class Mailer
         $this->mail->Body = $body;
     }
 
-    public function generateHtml($html, ArrayList $lParameters = null){
+    public function generateHtml($html, GrimlockList $lParameters = null){
         if($lParameters != null){
             for($i = 0; $i < $lParameters->getSize(); $i++){
                 $parameter = $lParameters->getItem($i);

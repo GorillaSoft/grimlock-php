@@ -7,12 +7,12 @@ use JsonSerializable;
 use Grimlock\Exception\GrimlockException;
 
 /**
- * Class ArrayList
+ * Class GrimlockList
  * Class that allows manipulating a list of objects
  * @package Grimlock\Util
  * @author Rubén Darío Huamaní Ucharima
  */
-class ArrayList extends ArrayObject implements JsonSerializable
+class GrimlockList extends ArrayObject implements JsonSerializable
 {
 
     public function jsonSerialize()
@@ -29,7 +29,7 @@ class ArrayList extends ArrayObject implements JsonSerializable
         }
         else
         {
-            throw new GrimlockException(ArrayList::class, "Index Out Of Bounds");
+            throw new GrimlockException(GrimlockList::class, "Index Out Of Bounds");
         }
     }
 

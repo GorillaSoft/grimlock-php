@@ -19,7 +19,7 @@ class HtmlToPdfTest extends TestCase
     {
         $htmlToPdf = new HtmlToPdf();
         $this->expectException(GrimlockException::class);
-        $this->expectException($htmlToPdf->loadHTML('/resources/template.html'));
+        $this->expectException($htmlToPdf->loadHTML("./test/resources/templates.html.php"));
     }
 
     /*public function testGeneratePDF()

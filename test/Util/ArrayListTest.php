@@ -2,7 +2,7 @@
 
 namespace Grimlock\Test\Util;
 
-use Grimlock\Util\ArrayList;
+use Grimlock\Util\GrimlockList;
 use Grimlock\Exception\GrimlockException;
 use PHPUnit\Framework\TestCase;
 
@@ -11,7 +11,7 @@ class ArrayListTest extends TestCase
 
     public function testGetItem()
     {
-        $lArray = new ArrayList();
+        $lArray = new GrimlockList();
         $object = "Object";
         $lArray->append($object);
 
@@ -20,7 +20,7 @@ class ArrayListTest extends TestCase
 
     public function testGetItemException()
     {
-        $lArray = new ArrayList();
+        $lArray = new GrimlockList();
         $this->expectException(GrimlockException::class);
         $lArray->getItem(1);
     }
